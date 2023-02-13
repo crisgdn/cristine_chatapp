@@ -1,5 +1,7 @@
 // imports will always go at the top
 import ChatMsg from './components/ChatMessage.js';
+import Login from './components/Login.js';
+import Chat from './components/Chat.js';
 
 const socket = io();
 
@@ -21,11 +23,6 @@ function handleUserTyping(user) {
   console.log('somebody is typing something');
 }
 
-function handleLogin(username) {
-
-vm.users.push(username);
-}
-
 
   const { createApp } = Vue
 
@@ -35,18 +32,12 @@ vm.users.push(username);
         socketID: '',
         message: '',
         messages: [],
-        nickname: '',
-        username: ''
+        nickname: ''
+    
       }
     }, 
 
     methods: {
-      handleLogin() {
-        socket.emit('login', {
-          name:this.username || 'anonymous',
-          id: this.socketID
-        })
-      },
         dispatchMessage() {
             socket.emit('chat_message', {
                 content: this.message,
@@ -66,7 +57,9 @@ vm.users.push(username);
     },
 
     components: {
-        newmsg: ChatMsg
+        newmsg: ChatMsg,
+        login: Login,
+        chat: Chat
     }
 
   }).mount('#app')
@@ -74,4 +67,3 @@ vm.users.push(username);
 socket.addEventListener('connected', setUserID);
 socket.addEventListener('new_message', showNewMessage);
 socket.addEventListener('typing', handleUserTyping);
-socket.addEventListener('login', handleLogin);

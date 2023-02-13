@@ -4,40 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel='stylesheet' href='/css/main.css'/>
-    <title>Chat</title>
 </head>
 <body>
-    <header>
-    <i class="fa-solid fa-comments fa-2x"></i>
-    <h1>Chat App</h1>
-    <button>Log out</button>
-    </header>
-    <main id="app">
-        <section class="generate">
-            <h2>Imput message here:</h2>
-            <input id="nickname" v-model="nickname" type="text" placeholder="Nickname?">
-        <form>
-            
-            <label for="message">Something to say?</label>
-            <!-- typing -->
-            <textarea @focus="catchTextFocus" v-model="message" id="textarea" class="message" autocomplete="off"></textarea>
-            <button @click.prevent="dispatchMessage" type="submit" value="Chat">Chat</button>
-        </form>
-        </section>
-
-        <section class="messages">
-            <ul id="messages">
-                <!-- render a new message component for every message -->
-                <newmsg v-for="message in messages" :message="message"></newmsg>
-            </ul>
-        </section>
-    </main>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/main.js" type="module" defer></script>
-    
+<main id="app" class="login-grid">
+<section class="container">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form class="form-login"action="chat.html">
+      <div>
+        <label for="username">Username:</label>
+        <input class="username" id="nickname" v-model="nickname" type="text" placeholder="username" required/>
+      </div>
+      <a href="/chat" type="submit" value="Login">Login</a>
+      <!--<router-link to="/chat">Go to chat  </router-link>
+      <router-link to="/login">log out</router-link>-->
+    </form>
+  </div>
+</section>
+</main>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/vue-router@4"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js" type="module" defer></script>
 </body>
 </html>
