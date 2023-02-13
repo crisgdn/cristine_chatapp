@@ -17,8 +17,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('/contact', (req, res) => {
-    res.sendFile(__dirname + '/contact.html');
+
+app.get('/chat', (req, res) => {
+    res.sendFile(__dirname + '/chat.html');
 });
 
 server.listen(port, () => {
