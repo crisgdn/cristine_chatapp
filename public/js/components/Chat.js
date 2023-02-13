@@ -1,7 +1,7 @@
 export default {
     name: 'Chat',
     props: ['message'],
-
+    
     template: `
     <header>
     <i class="fa-solid fa-comments fa-2x"></i>

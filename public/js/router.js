@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Login from './components/Login.js';
 import Chat from './components/Chat.js';
 
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({

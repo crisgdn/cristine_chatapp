@@ -63,6 +63,7 @@ function handleUserTyping(user) {
     }
 
   }).mount('#app')
+  
 
 socket.addEventListener('connected', setUserID);
 socket.addEventListener('new_message', showNewMessage);
