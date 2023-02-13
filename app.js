@@ -17,6 +17,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 });
 
+
 app.get('/chat', (req, res) => {
     res.sendFile(__dirname + '/chat.html');
 });
