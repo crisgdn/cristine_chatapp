@@ -1,17 +1,23 @@
 
 export default {
+    name: 'TheLoginPage',
+
+    props: ['item'],
+
+    emits: ['closelogin'],
+
+
   template: `
-  <article class="login-grid">
+  <article class="login-grid" v-if="openlogin">
   <section>
     <div class="login-container">
       <h2>Login</h2>
       <form>
         <div class="form-group">
           <label for="username">Username:</label>
-          <input id="nickname" v-model="nickname" type="text" placeholder="Nickname?">
+          <input id="username" v-model="username" type="text" placeholder="username">
         </div>
-
-        <router-link to="/chat">Login</router-link>
+        <button @closelogin="this.showLogin-false" v-if="showLogin">Login</button>
         
       </form>
     </div>
@@ -19,19 +25,18 @@ export default {
   </article>
   `,
 
-    data: function() {
-      return {
-        nickname: ""
-
-      }
-  },
 
   methods: {
-      submitData() {
-          // hit an api with a Fetch call
-          // refer to the mailForm example from last semester -> the node mailer setup
+    catchTextFocus() {
+      // emit a custom typing event and broadcast it to the server
+      socket.emit('user_typing', {
+        name: this.nickname || 'anonymous'
+      })
+    },
 
-          debugger;
-      }
-  }
+      closeLogin() {
+        this.$emit('closelogin');
+    }
+}
+  
 }

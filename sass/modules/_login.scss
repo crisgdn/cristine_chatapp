@@ -19,13 +19,14 @@
 }
 
 .login-grid {
+    position: absolute;
+    z-index: 5000;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px;
     background: no-repeat url("../images/paint.jpg");
     height: 800px;
-
 }
 
 .form-login {

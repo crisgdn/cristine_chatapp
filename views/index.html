@@ -4,19 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel='stylesheet' href='/css/main.css'/>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://unpkg.com/vue-router@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Chat</title>
 </head>
 <body>
     <main id="app">
-      
-      <router-view></router-view>
 
+      <article class="login-grid" v-if="openlogin">
+        <section>
+          <div class="login-container">
+            <h2>Login</h2>
+            <form>
+              <div class="form-login">
+                <label for="username">Username:</label>
+                <input id="username" v-model="username" type="text" placeholder="username">
+              </div>
+              <!-- close login -->
+              <button v-on:click="openlogin = false">Log in</button>
+                       
+            </form>
+          </div>
+        </section>
+        </article>
+
+      <div class="chat">
+       <header>
+            <i class="fa-solid fa-comments fa-2x"></i>
+            <h1>Chat App</h1>
+            <p> Welcome {{ username }}</p>
+            <!-- show login -->
+            <button v-on:click="openlogin = true">Log out</button>
+       </header>
+       <article class="grid">
+        <section class="generate">
+            <h2>Imput message here:</h2>
+            <input id="nickname" v-model="nickname" type="text" placeholder="Nickname?">
+        <form>
+            <label for="message">Something to say?</label>
+            <textarea @focus="catchTextFocus" v-model="message" id="textarea" class="message" autocomplete="off"></textarea>
+            <button @click.prevent="dispatchMessage" type="submit" value="Chat">Chat</button>
+        </form>
+        </section>
+
+        <section class="messages">
+            <ul id="messages">
+                <!-- render a new message component for every message -->
+                <newmsg v-for="message in messages" :message="message"></newmsg>
+            </ul>
+        </section>
+      </article> 
+    </div>
     </main>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/main.js" type="module" defer></script>  
+    <script src="/js/main.js" type="module" defer></script>
+    
 </body>
 </html>
