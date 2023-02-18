@@ -1,3 +1,12 @@
+.login-grid {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: no-repeat url("../images/paint.jpg");
+    height: 800px;
+}
 
 .container {
     display: flex;
@@ -18,24 +27,13 @@
     border-radius: 8px; 
 }
 
-.login-grid {
-    position: absolute;
-    z-index: 5000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px;
-    background: no-repeat url("../images/paint.jpg");
-    height: 800px;
-}
-
 .form-login {
     width: 300px;
     border-top: solid 1px #4540DB;
-    border-bottom: solid 1px #4540DB;
+    margin-bottom: 10px;
 }
 
-input[type="text"] { 
+#username { 
     background: #F8F8F8;
     height: 40px;
     border: 1px solid #66EFE5;

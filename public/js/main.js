@@ -30,7 +30,8 @@ function handleUserTyping(user) {
         messages: [],
         nickname: '',
         username:'',
-        openlogin: true
+        openlogin: true,
+        openchat: false
       }
     }, 
 
@@ -58,6 +59,11 @@ function handleUserTyping(user) {
             name: this.username || 'anonymous'
           })
         },
+
+        showChat() {
+          this.openlogin = !this.openlogin
+          this.openchat = !this.openchat
+        }
     },
 
     components: {

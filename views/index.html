@@ -10,7 +10,7 @@
 </head>
 <body>
     <main id="app">
-
+<!-- -------------------login--------------------------------- -->
       <article class="login-grid" v-if="openlogin">
         <section>
           <div class="login-container">
@@ -21,20 +21,19 @@
                 <input id="username" v-model="username" type="text" placeholder="username">
               </div>
               <!-- close login -->
-              <button v-on:click="openlogin = false">Log in</button>
+              <button @click="showChat">Log in</button>
                        
             </form>
           </div>
         </section>
-        </article>
-
-      <div class="chat">
+      </article>
+<!-- -------------------chat--------------------------------- -->
+      <div class="chat" v-if="openchat">
        <header>
             <i class="fa-solid fa-comments fa-2x"></i>
-            <h1>Chat App</h1>
-            <p> Welcome {{ username }}</p>
+            <h1> Welcome {{ username }}</h1>
             <!-- show login -->
-            <button v-on:click="openlogin = true">Log out</button>
+            <button @click="showChat">Log out</button>
        </header>
        <article class="grid">
         <section class="generate">
