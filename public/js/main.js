@@ -16,15 +16,8 @@ function showNewMessage( { message }) {
     vm.messages.push(message);
 }
 
-
 function handleUserTyping(user) {
   console.log('somebody is typing something');
-}
-
-
-function handleLogin(username) {
-
-vm.users.push(username);
 }
 
   const { createApp } = Vue
@@ -37,19 +30,13 @@ vm.users.push(username);
         messages: [],
 
         nickname: '',
-        username: ''
+        username:'',
+        openlogin: true,
+        openchat: false
       }
     }, 
 
     methods: {
-
-      handleLogin() {
-        socket.emit('login', {
-          name:this.username || 'anonymous',
-          id: this.socketID
-        })
-      },
-
         dispatchMessage() {
             socket.emit('chat_message', {
                 content: this.message,
@@ -65,6 +52,18 @@ vm.users.push(username);
           socket.emit('user_typing', {
             name: this.nickname || 'anonymous'
           })
+        },
+
+        catchUsername() {
+          // emit a custom typing event and broadcast it to the server
+          socket.emit('user_typing', {
+            name: this.username || 'anonymous'
+          })
+        },
+
+        showChat() {
+          this.openlogin = !this.openlogin
+          this.openchat = !this.openchat
         }
     },
 
@@ -77,4 +76,4 @@ vm.users.push(username);
 socket.addEventListener('connected', setUserID);
 socket.addEventListener('new_message', showNewMessage);
 socket.addEventListener('typing', handleUserTyping);
-socket.addEventListener('login', handleLogin);
+
