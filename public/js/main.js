@@ -28,6 +28,7 @@ function handleUserTyping(user) {
         socketID: '',
         message: '',
         messages: [],
+
         nickname: '',
         username:'',
         openlogin: true,
@@ -75,3 +76,4 @@ function handleUserTyping(user) {
 socket.addEventListener('connected', setUserID);
 socket.addEventListener('new_message', showNewMessage);
 socket.addEventListener('typing', handleUserTyping);
+
