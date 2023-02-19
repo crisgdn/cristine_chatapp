@@ -41,7 +41,7 @@ http://localhost:3000
 - Socket.IO
 
 ### Acknowledgements
-[Socket.IO](https://socket.io/docs/) documentation: https://socket.io/docs/
+[Socket.IO](https://socket.io/docs/) documentation: https://socket.io/docs/ <br>
 Tutorial Vue.js Course for Beginners [2021 Tutorial]: https://www.youtube.com/watch?v=FXpIoQ_rT_c
 
 ### License
