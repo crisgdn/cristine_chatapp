@@ -13,23 +13,23 @@ This is a real-time chat application built with Node.js, Express, Vue, and Socke
 Node.js and NPM (Node Package Manager) installed on your system.
 
 ### Installation
-1.Clone the repository to your local machine:
+1. Clone the repository to your local machine:
 ```
 git clone https://github.com/your-username/live-chat-app.git
 ```
 
-2.Install the dependencies:
+2. Install the dependencies:
 ```
 cd live-chat-app
 npm install
 ```
 
-3.Start the server:
+3. Start the server:
 ```
 npm run start
 ```
 
-4.Open the app in your browser:
+4. Open the app in your browser:
 ```
 http://localhost:3000
 ```
