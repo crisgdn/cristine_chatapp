@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crisgdn/node_chat1.git"
+    "url": "git+https://github.com/crisgdn/cristine_chatapp.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/crisgdn/node_chat1/issues"
+    "url": "https://github.com/crisgdn/cristine_chatapp/issues"
   },
-  "homepage": "https://github.com/crisgdn/node_chat1#readme"
+  "homepage": "https://github.com/crisgdn/cristine_chatapp#readme"
 }

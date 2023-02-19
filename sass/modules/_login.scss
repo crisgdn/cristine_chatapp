@@ -1,5 +1,5 @@
+/* -----------------login---------------*/
 .login-grid {
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,7 +30,9 @@
 .form-login {
     width: 300px;
     border-top: solid 1px #4540DB;
+    border-bottom: solid 1px #4540DB;
     margin-bottom: 10px;
+    padding-bottom: 15px;
 }
 
 #username { 
@@ -38,7 +40,7 @@
     height: 40px;
     border: 1px solid #66EFE5;
     width: 250px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     padding: 10px;
     font-weight: 300;
     color: #19181D;
@@ -61,3 +63,49 @@ a {
     border-radius: 4px;
 }
 
+/* --- Small devices (landscape phones, 576px and up)--*/
+@media (max-width: 575.98px) { 
+    
+    .login-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+        background: no-repeat url("../images/paint.jpg");
+        height: 1000px;
+    }
+
+    .login-container { 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px;
+        gap: 15px;
+        width: 95%;
+        height: 370px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px; 
+    }
+    
+    .form-login {
+        width: 95%;
+        border-top: solid 1px #4540DB;
+        border-bottom: solid 1px #4540DB;
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+    }
+    
+    #username { 
+        background: #F8F8F8;
+        height: 40px;
+        border: 1px solid #66EFE5;
+        width: 150px;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-weight: 300;
+        color: #19181D;
+        border-radius: 10px;
+    }
+    
+
+}
