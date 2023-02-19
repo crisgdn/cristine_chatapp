@@ -35,10 +35,13 @@ http://localhost:3000
 ```
 
 ### Built With
--Node.js
--Express
--Vue
--Socket.IO
+- Node.js
+- Express
+- Vue
+- Socket.IO
+- George Washington
+* John Adams
++ Thomas Jefferson
 
 ### Acknowledgements
 [Socket.IO](https://socket.io/docs/) documentation: https://socket.io/docs/
