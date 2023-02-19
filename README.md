@@ -3,9 +3,9 @@
 This is a real-time chat application built with Node.js, Express, Vue, and Socket.IO. It allows users to join chat rooms and communicate with each other in real time.
 
 ## Features
--Join chat rooms with unique room IDs
--Send and receive messages in real time
--User registration and login
+- Join chat rooms with unique room IDs
+- Send and receive messages in real time
+- User registration and login
 
 ## Getting Started
 
