@@ -15,12 +15,12 @@ Node.js and NPM (Node Package Manager) installed on your system.
 ### Installation
 1. Clone the repository to your local machine:
 ```
-git clone https://github.com/your-username/live-chat-app.git
+git clone https://github.com/crisgdn/cristine_chatapp.git
 ```
 
 2. Install the dependencies:
 ```
-cd live-chat-app
+cd cristine_chatapp
 npm install
 ```
 
